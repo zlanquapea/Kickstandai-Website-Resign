@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, useScroll, useTransform, Variants } from 'framer-motion'
 
 const metrics = [
@@ -12,6 +13,7 @@ const words = ['Sustainability.', 'Healthcare.', 'The Future.']
 const easing = [0.22, 1, 0.36, 1] as const
 
 function HeroSection() {
+  const navigate = useNavigate()
   const sectionRef = useRef<HTMLElement>(null)
   const wordRef = useRef<HTMLSpanElement>(null)
   const wordIndex = useRef(0)
@@ -117,11 +119,7 @@ function HeroSection() {
             <motion.button
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() =>
-                document
-                  .getElementById('cta-section')
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }
+              onClick={() => navigate('/schedule')}
               className="px-6 py-3 text-[14px] font-medium text-bg-primary bg-text-primary rounded-md"
             >
               Schedule a Chat

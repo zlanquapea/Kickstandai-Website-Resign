@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useInView, Variants } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1] as const
@@ -73,20 +74,18 @@ function CTASection() {
         animate={inView ? 'visible' : 'hidden'}
         className="flex flex-wrap items-center justify-center gap-4 mb-6"
       >
-        <motion.button
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.97 }}
-          className="px-8 py-3.5 text-[14px] font-medium text-bg-primary bg-text-primary rounded-md"
+        <Link
+          to="/schedule"
+          className="px-8 py-3.5 text-[14px] font-medium text-bg-primary bg-text-primary rounded-md hover:-translate-y-0.5 transition-transform inline-block"
         >
           Schedule a Chat
-        </motion.button>
-        <motion.button
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.97 }}
-          className="px-8 py-3.5 text-[14px] text-text-body border-[0.5px] border-white/20 rounded-md hover:border-white/40 hover:text-text-primary transition-all"
+        </Link>
+        <Link
+          to="/case-studies"
+          className="px-8 py-3.5 text-[14px] text-text-body border-[0.5px] border-white/20 rounded-md hover:border-white/40 hover:text-text-primary hover:-translate-y-0.5 transition-all inline-block"
         >
           View case studies
-        </motion.button>
+        </Link>
       </motion.div>
 
       <motion.p

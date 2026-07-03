@@ -1,6 +1,15 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+
+const isPlaceholder = (value: string | undefined) =>
+  !value || value.startsWith('your_')
+
+const emailjsConfigured =
+  !isPlaceholder(process.env.REACT_APP_EMAILJS_SERVICE_ID) &&
+  !isPlaceholder(process.env.REACT_APP_EMAILJS_TEMPLATE_ID) &&
+  !isPlaceholder(process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
 
 const easing = [0.22, 1, 0.36, 1] as const
 
@@ -99,7 +108,6 @@ export default function ScheduleChat() {
 
     const pad = (n: number) => String(n).padStart(2, '0')
     const dateStr = `${currentYear}${pad(currentMonth + 1)}${pad(selectedDate!)}T${pad(hour)}${pad(min)}00`
-    const endHour = hour + 0
     const endMin = min + 30 >= 60 ? min + 30 - 60 : min + 30
     const endHourFinal = min + 30 >= 60 ? hour + 1 : hour
     const endDateStr = `${currentYear}${pad(currentMonth + 1)}${pad(selectedDate!)}T${pad(endHourFinal)}${pad(endMin)}00`
@@ -127,12 +135,14 @@ export default function ScheduleChat() {
     }
 
     try {
-      await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!,
-      )
+      if (emailjsConfigured) {
+        await emailjs.send(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
+          templateParams,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY!,
+        )
+      }
       setSubmitted(true)
     } catch (err) {
       setError('Something went wrong. Please try again or email us directly.')
@@ -206,7 +216,7 @@ export default function ScheduleChat() {
           </div>
 
           {/* Add to Google Calendar button */}
-          
+          <a
             href={buildGoogleCalendarLink()}
             target="_blank"
             rel="noreferrer"
@@ -245,18 +255,18 @@ export default function ScheduleChat() {
 
       {/* Top bar */}
       <div className="border-b-[0.5px] border-white/10 px-8 md:px-16 h-[68px] flex items-center justify-between">
-        <a href="/" className="font-display text-lg flex items-center gap-2.5 text-text-primary">
+        <Link to="/" className="font-display text-lg flex items-center gap-2.5 text-text-primary">
           <span className="w-7 h-7 border-[0.5px] border-accent-mint rounded-md flex items-center justify-center text-[13px] font-sans font-semibold text-accent-mint">
             K
           </span>
           Kickstand AI
-        </a>
+        </Link>
         <span className="text-[12px] text-text-body/40 tracking-wide hidden md:block">
           No commitment required — just a conversation.
         </span>
-        <a href="/" className="text-[13px] text-text-body hover:text-text-primary transition-colors">
+        <Link to="/" className="text-[13px] text-text-body hover:text-text-primary transition-colors">
           Back to site
-        </a>
+        </Link>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-16">
