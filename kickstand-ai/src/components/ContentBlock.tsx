@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import { motion, useInView, Variants } from 'framer-motion'
 
 interface Link {
@@ -17,6 +18,7 @@ interface ContentBlockProps {
   accentColor: 'mint' | 'lavender'
   links: Link[]
   ctaText: string
+  ctaHref: string
   reverse: boolean
 }
 
@@ -83,6 +85,7 @@ function ContentBlock({
   accentColor,
   links,
   ctaText,
+  ctaHref,
   reverse,
 }: ContentBlockProps) {
   // Added <HTMLElement> typing to the ref for hook stability
@@ -161,30 +164,36 @@ function ContentBlock({
         {links.map((link, i) => {
           const borderClass =
             i < links.length - 1 ? 'border-b-[0.5px] border-white/10' : ''
-          return (
-            // Fixed the broken <a> tag syntax below:
-            <a
-              key={i}
-              href={link.href}
-              className={`flex items-center justify-between px-5 py-3.5 text-[13px] text-text-body hover:text-text-primary hover:bg-white/[0.03] transition-all group ${borderClass}`}
-            >
+          const className = `flex items-center justify-between px-5 py-3.5 text-[13px] text-text-body hover:text-text-primary hover:bg-white/[0.03] transition-all group ${borderClass}`
+          const content = (
+            <>
               <span>{link.label}</span>
               <span className="opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
                 {link.external ? '↗' : '→'}
               </span>
+            </>
+          )
+          return link.href.startsWith('/') ? (
+            <RouterLink key={i} to={link.href} className={className}>
+              {content}
+            </RouterLink>
+          ) : (
+            <a key={i} href={link.href} className={className}>
+              {content}
             </a>
           )
         })}
       </motion.div>
 
-      <motion.button
-        variants={itemVariants}
-        whileHover={{ x: 4 }}
-        className="self-start flex items-center gap-2 text-[14px] font-medium transition-all bg-transparent border-none cursor-pointer"
-        style={{ color: accent }}
-      >
-        {ctaText} →
-      </motion.button>
+      <motion.div variants={itemVariants} className="self-start">
+        <RouterLink
+          to={ctaHref}
+          className="flex items-center gap-2 text-[14px] font-medium transition-all hover:gap-3"
+          style={{ color: accent }}
+        >
+          {ctaText} →
+        </RouterLink>
+      </motion.div>
     </motion.div>
   )
 

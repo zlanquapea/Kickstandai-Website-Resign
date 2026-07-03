@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useInView, Variants } from 'framer-motion'
 
 const stats = [
@@ -125,6 +126,21 @@ function FoundersSection() {
                 </div>
               </div>
             ))}
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            variants={itemVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className="mt-6"
+          >
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-[14px] font-medium text-accent-mint hover:gap-3 transition-all"
+            >
+              More about our story →
+            </Link>
           </motion.div>
         </div>
       </div>
