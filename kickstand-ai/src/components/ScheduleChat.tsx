@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import logo from '../assets/logo.png'
 
 const isPlaceholder = (value: string | undefined) =>
   !value || value.startsWith('your_')
@@ -256,9 +257,7 @@ export default function ScheduleChat() {
       {/* Top bar */}
       <div className="border-b-[0.5px] border-white/10 px-8 md:px-16 h-[68px] flex items-center justify-between">
         <Link to="/" className="font-display text-lg flex items-center gap-2.5 text-text-primary">
-          <span className="w-7 h-7 border-[0.5px] border-accent-mint rounded-md flex items-center justify-center text-[13px] font-sans font-semibold text-accent-mint">
-            K
-          </span>
+          <img src={logo} alt="Kickstand AI" className="w-8 h-8 object-contain" />
           Kickstand AI
         </Link>
         <span className="text-[12px] text-text-body/40 tracking-wide hidden md:block">

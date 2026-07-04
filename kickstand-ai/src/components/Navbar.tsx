@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/logo.png'
 
 const links = [
   { label: 'Healthcare', to: '/healthcare' },
@@ -40,12 +41,12 @@ function Navbar() {
         }`}
       >
         <Link to="/" className="font-display text-xl flex items-center gap-2.5 text-text-primary">
-          <motion.span
+          <motion.img
             whileHover={{ scale: 1.08 }}
-            className="w-7 h-7 border-[0.5px] border-accent-mint rounded-md flex items-center justify-center text-[13px] font-sans font-semibold text-accent-mint"
-          >
-            K
-          </motion.span>
+            src={logo}
+            alt="Kickstand AI"
+            className="w-8 h-8 object-contain"
+          />
           Kickstand AI
         </Link>
 

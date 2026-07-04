@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 const links = [
   { label: 'Healthcare', to: '/healthcare' },
@@ -37,9 +38,7 @@ function Footer() {
   return (
     <footer className="bg-bg-alt border-t-[0.5px] border-white/10 px-8 md:px-16 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <Link to="/" className="font-display text-[16px] text-text-body flex items-center gap-2">
-        <span className="w-[22px] h-[22px] border-[0.5px] border-accent-mint/50 rounded flex items-center justify-center text-[11px] font-sans font-semibold text-accent-mint">
-          K
-        </span>
+        <img src={logo} alt="Kickstand AI" className="w-[26px] h-[26px] object-contain" />
         Kickstand AI
       </Link>
 
