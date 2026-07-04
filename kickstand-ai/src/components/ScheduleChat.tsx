@@ -166,7 +166,7 @@ export default function ScheduleChat() {
   // ── Success screen ────────────────────────────────────────
   if (submitted) {
     return (
-      <div className="min-h-screen bg-bg-primary flex items-center justify-center px-6">
+      <main className="min-h-screen bg-bg-primary flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -245,7 +245,7 @@ export default function ScheduleChat() {
             Schedule another session
           </button>
         </motion.div>
-      </div>
+      </main>
     )
   }
 
@@ -269,7 +269,7 @@ export default function ScheduleChat() {
         </Link>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-16">
+      <main className="max-w-6xl mx-auto px-6 md:px-12 py-16">
 
         {/* Page header */}
         <motion.div
@@ -406,13 +406,13 @@ export default function ScheduleChat() {
 
                   <div className="border-[0.5px] border-white/10 rounded-xl overflow-hidden mb-6">
                     <div className="flex items-center justify-between px-5 py-4 border-b-[0.5px] border-white/10">
-                      <button onClick={prevMonth} className="w-7 h-7 flex items-center justify-center text-text-body hover:text-text-primary transition-colors rounded-md hover:bg-white/5">
+                      <button onClick={prevMonth} aria-label="Previous month" className="w-7 h-7 flex items-center justify-center text-text-body hover:text-text-primary transition-colors rounded-md hover:bg-white/5">
                         ←
                       </button>
                       <span className="text-[14px] font-medium text-text-primary">
                         {MONTHS[currentMonth]} {currentYear}
                       </span>
-                      <button onClick={nextMonth} className="w-7 h-7 flex items-center justify-center text-text-body hover:text-text-primary transition-colors rounded-md hover:bg-white/5">
+                      <button onClick={nextMonth} aria-label="Next month" className="w-7 h-7 flex items-center justify-center text-text-body hover:text-text-primary transition-colors rounded-md hover:bg-white/5">
                         →
                       </button>
                     </div>
@@ -519,10 +519,11 @@ export default function ScheduleChat() {
                       { key: 'lastName', label: 'Last name', placeholder: 'Doe' },
                     ].map(f => (
                       <div key={f.key}>
-                        <label className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
+                        <label htmlFor={f.key} className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
                           {f.label}
                         </label>
                         <input
+                          id={f.key}
                           type="text"
                           placeholder={f.placeholder}
                           value={form[f.key as keyof FormData]}
@@ -534,10 +535,11 @@ export default function ScheduleChat() {
                   </div>
 
                   <div className="mb-4">
-                    <label className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
+                    <label htmlFor="email" className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
                       Work email
                     </label>
                     <input
+                      id="email"
                       type="email"
                       placeholder="jane@company.com"
                       value={form.email}
@@ -548,10 +550,11 @@ export default function ScheduleChat() {
 
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
+                      <label htmlFor="company" className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
                         Organization
                       </label>
                       <input
+                        id="company"
                         type="text"
                         placeholder="Acme Health"
                         value={form.company}
@@ -560,10 +563,11 @@ export default function ScheduleChat() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
+                      <label htmlFor="role" className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
                         Your role
                       </label>
                       <input
+                        id="role"
                         type="text"
                         placeholder="Operations Director"
                         value={form.role}
@@ -574,10 +578,11 @@ export default function ScheduleChat() {
                   </div>
 
                   <div className="mb-8">
-                    <label className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
+                    <label htmlFor="message" className="block text-[11px] uppercase tracking-[0.1em] text-text-body mb-2">
                       What's the core problem you're trying to solve?
                     </label>
                     <textarea
+                      id="message"
                       rows={4}
                       placeholder="We're spending 3 hours a day on patient intake paperwork and our staff is burning out..."
                       value={form.message}
@@ -760,7 +765,7 @@ export default function ScheduleChat() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

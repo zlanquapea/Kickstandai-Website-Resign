@@ -82,9 +82,9 @@ function AboutPage() {
               animate={valuesInView ? 'visible' : 'hidden'}
               className="bg-bg-alt p-8"
             >
-              <h3 className="font-display text-xl text-text-primary mb-3 tracking-tight">
+              <h2 className="font-display text-xl text-text-primary mb-3 tracking-tight">
                 {v.title}
-              </h3>
+              </h2>
               <p className="text-[14px] font-light text-text-body leading-[1.75]">
                 {v.body}
               </p>

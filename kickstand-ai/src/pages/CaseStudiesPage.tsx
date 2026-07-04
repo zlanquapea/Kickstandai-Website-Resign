@@ -101,9 +101,9 @@ function CaseStudiesPage() {
                 >
                   {cs.division} · {cs.org}
                 </span>
-                <h3 className="font-display text-2xl text-text-primary mb-3 tracking-tight leading-snug">
+                <h2 className="font-display text-2xl text-text-primary mb-3 tracking-tight leading-snug">
                   {cs.headline}
-                </h3>
+                </h2>
                 <p className="text-[14px] font-light text-text-body leading-[1.75] mb-6 flex-1">
                   {cs.body}
                 </p>
