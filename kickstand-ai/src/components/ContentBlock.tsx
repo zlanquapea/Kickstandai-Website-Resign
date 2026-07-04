@@ -26,7 +26,7 @@ const barHeights = [40, 65, 50, 80, 55, 90, 70]
 const easing = [0.22, 1, 0.36, 1] as const
 
 function VisualMockup({ accentColor }: { accentColor: 'mint' | 'lavender' }) {
-  const accent = accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+  const accent = accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
   const accentFaint =
     accentColor === 'mint'
       ? 'rgba(167,243,208,0.12)'
@@ -91,7 +91,7 @@ function ContentBlock({
   // Added <HTMLElement> typing to the ref for hook stability
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const accent = accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+  const accent = accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
   const isAlt = reverse
 
   const containerVariants: Variants = {

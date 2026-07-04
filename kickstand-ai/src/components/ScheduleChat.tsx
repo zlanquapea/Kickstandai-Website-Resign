@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import logo from '../assets/logo.png'
 
 const isPlaceholder = (value: string | undefined) =>
   !value || value.startsWith('your_')
@@ -174,7 +175,7 @@ export default function ScheduleChat() {
           className="text-center max-w-lg"
         >
           <div className="w-16 h-16 rounded-full border-[0.5px] border-accent-mint/40 flex items-center justify-center mx-auto mb-8 bg-accent-mint/5">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A7F3D0" strokeWidth="1.2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A7F3F0" strokeWidth="1.2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
@@ -256,9 +257,7 @@ export default function ScheduleChat() {
       {/* Top bar */}
       <div className="border-b-[0.5px] border-white/10 px-8 md:px-16 h-[68px] flex items-center justify-between">
         <Link to="/" className="font-display text-lg flex items-center gap-2.5 text-text-primary">
-          <span className="w-7 h-7 border-[0.5px] border-accent-mint rounded-md flex items-center justify-center text-[13px] font-sans font-semibold text-accent-mint">
-            K
-          </span>
+          <img src={logo} alt="Kickstand AI" className="w-8 h-8 object-contain" />
           Kickstand AI
         </Link>
         <span className="text-[12px] text-text-body/40 tracking-wide hidden md:block">
@@ -286,7 +285,7 @@ export default function ScheduleChat() {
           </div>
           <h1 className="font-display text-[clamp(36px,4vw,56px)] leading-[1.08] tracking-[-1.5px] mb-4">
             Book a 30-minute<br />
-            <em style={{ color: '#A7F3D0' }}>strategy session.</em>
+            <em style={{ color: '#A7F3F0' }}>strategy session.</em>
           </h1>
           <p className="text-[15px] font-light text-text-body leading-[1.8]">
             Tell us what's broken. We'll come prepared with ideas specific to

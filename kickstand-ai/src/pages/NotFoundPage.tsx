@@ -19,7 +19,7 @@ function NotFoundPage() {
         </span>
         <h1 className="font-display text-[clamp(36px,5vw,64px)] tracking-[-1.5px] text-text-primary mb-5">
           This page took a{' '}
-          <em style={{ color: '#A7F3D0' }}>wrong turn.</em>
+          <em style={{ color: '#A7F3F0' }}>wrong turn.</em>
         </h1>
         <p className="text-[15px] font-light text-text-body max-w-[420px] mx-auto mb-10 leading-[1.8]">
           The page you're looking for doesn't exist or may have moved. Let's get you back on track.

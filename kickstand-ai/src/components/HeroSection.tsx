@@ -93,7 +93,7 @@ function HeroSection() {
             <span
               ref={wordRef}
               style={{
-                color: '#A7F3D0',
+                color: '#A7F3F0',
                 fontStyle: 'italic',
                 display: 'inline-block',
                 transition: 'opacity 0.35s ease, transform 0.35s ease',
@@ -195,7 +195,7 @@ function HeroSection() {
                       <span
                         className="font-display text-3xl leading-none mb-1"
                         style={{
-                          color: cell.accent ? '#A7F3D0' : '#F8FAFC',
+                          color: cell.accent ? '#A7F3F0' : '#F8FAFC',
                         }}
                       >
                         {cell.value}
@@ -220,7 +220,7 @@ function HeroSection() {
                   height="18"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#A7F3D0"
+                  stroke="#A7F3F0"
                   strokeWidth="1.5"
                 >
                   <polygon points="5 3 19 12 5 21 5 3" />

@@ -8,8 +8,8 @@ module.exports = {
         'bg-alt':      '#121216',
         'text-primary': '#F8FAFC',
         'text-body':   '#94A3B8',
-        'accent-mint': '#A7F3D0',
-        'accent-lav':  '#E9D5FF',
+        'accent-mint': '#A7F3F0',
+        'accent-lav':  '#EBD5FF',
       },
       fontFamily: {
         sans:    ['Inter', 'sans-serif'],
