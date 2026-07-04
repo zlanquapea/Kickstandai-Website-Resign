@@ -46,15 +46,31 @@ function FoundersSection() {
           />
           <div className="w-32 h-32 rounded-full border-[0.5px] border-accent-mint/30 flex items-center justify-center mb-4 bg-accent-mint/5">
             <span className="font-display text-5xl text-text-body/60 tracking-tight">
-              KA
+              TG
             </span>
+          </div>
+          <div className="text-[15px] text-text-primary text-center mb-1">
+            Travis Garland
           </div>
           <div className="text-[13px] text-text-body/50 text-center mb-2">
             Founder & CEO
           </div>
-          <div className="text-[11px] text-text-body/30 text-center">
+          <div className="text-[11px] text-text-body/30 text-center mb-4">
             Kickstand AI · Est. 2022
           </div>
+          <a
+            href="https://www.linkedin.com/in/travis-garland/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Travis Garland on LinkedIn"
+            className="w-8 h-8 rounded-md border-[0.5px] border-white/10 flex items-center justify-center text-text-body/40 hover:text-text-primary hover:border-white/25 transition-colors"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
           <div className="absolute bottom-0 left-0 right-0 border-t-[0.5px] border-white/10 px-6 py-4">
             <p className="text-[11px] text-text-body/40 text-center tracking-wide">
               Remote-first · US-based · HIPAA certified
@@ -84,9 +100,8 @@ function FoundersSection() {
             animate={inView ? 'visible' : 'hidden'}
             className="font-display text-[clamp(26px,2.8vw,40px)] leading-[1.2] tracking-[-0.8px] text-text-primary mb-8"
           >
-            "Most AI tools promise efficiency. We promise that the{' '}
-            <em style={{ color: '#A7F3F0' }}>right things</em> get the time
-            back."
+            "I protect human data from{' '}
+            <em style={{ color: '#A7F3F0' }}>badly behaving AI agents.</em>"
           </motion.blockquote>
 
           <motion.p
@@ -96,10 +111,11 @@ function FoundersSection() {
             animate={inView ? 'visible' : 'hidden'}
             className="text-[15px] font-light text-text-body leading-[1.8] max-w-[520px] mb-10"
           >
-            We started Kickstand AI because we watched overworked clinical teams
-            spend more time on paperwork than on patients — and saw the same
-            pattern in sustainability organizations drowning in data they
-            couldn't act on. We build infrastructure that changes that math.
+            Travis Garland leads Kickstand AI with a simple mission: automate
+            what's manual, personalize what's generic, and scale what's
+            working — without adding headcount or losing the human touch. He's
+            also the co-founder of My-CC.io, the compliance layer that lets AI
+            operate in regulated industries without breaking the rules.
           </motion.p>
 
           <motion.div
