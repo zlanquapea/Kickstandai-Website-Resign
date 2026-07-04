@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView, Variants } from 'framer-motion'
+import founderPhoto from '../assets/founder-travis.jpg'
 
 const stats = [
   { value: '50%', label: 'Admin overhead cut, avg. client' },
@@ -44,11 +45,11 @@ function FoundersSection() {
                 'radial-gradient(ellipse at 50% 30%, rgba(167,243,208,0.05) 0%, transparent 65%)',
             }}
           />
-          <div className="w-32 h-32 rounded-full border-[0.5px] border-accent-mint/30 flex items-center justify-center mb-4 bg-accent-mint/5">
-            <span className="font-display text-5xl text-text-body/60 tracking-tight">
-              TG
-            </span>
-          </div>
+          <img
+            src={founderPhoto}
+            alt="Travis Garland, Founder & CEO of Kickstand AI"
+            className="w-32 h-32 rounded-full border-[0.5px] border-accent-mint/30 object-cover mb-4"
+          />
           <div className="text-[15px] text-text-primary text-center mb-1">
             Travis Garland
           </div>
