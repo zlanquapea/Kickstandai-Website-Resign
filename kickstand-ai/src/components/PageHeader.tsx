@@ -20,7 +20,7 @@ function PageHeader({
 }: PageHeaderProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
-  const accent = accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+  const accent = accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
   const accentClass = accentColor === 'mint' ? 'text-accent-mint' : 'text-accent-lav'
   const accentBg = accentColor === 'mint' ? 'bg-accent-mint' : 'bg-accent-lav'
 

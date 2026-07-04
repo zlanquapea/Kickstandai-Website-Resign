@@ -175,7 +175,7 @@ export default function ScheduleChat() {
           className="text-center max-w-lg"
         >
           <div className="w-16 h-16 rounded-full border-[0.5px] border-accent-mint/40 flex items-center justify-center mx-auto mb-8 bg-accent-mint/5">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A7F3D0" strokeWidth="1.2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A7F3F0" strokeWidth="1.2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>
@@ -285,7 +285,7 @@ export default function ScheduleChat() {
           </div>
           <h1 className="font-display text-[clamp(36px,4vw,56px)] leading-[1.08] tracking-[-1.5px] mb-4">
             Book a 30-minute<br />
-            <em style={{ color: '#A7F3D0' }}>strategy session.</em>
+            <em style={{ color: '#A7F3F0' }}>strategy session.</em>
           </h1>
           <p className="text-[15px] font-light text-text-body leading-[1.8]">
             Tell us what's broken. We'll come prepared with ideas specific to

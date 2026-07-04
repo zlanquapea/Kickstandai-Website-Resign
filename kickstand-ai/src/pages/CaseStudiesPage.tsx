@@ -85,7 +85,7 @@ function CaseStudiesPage() {
       <section ref={ref} className="px-8 md:px-16 py-20 bg-bg-primary border-b-[0.5px] border-white/10">
         <div className="grid md:grid-cols-2 gap-6">
           {caseStudies.map((cs, i) => {
-            const accent = cs.accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+            const accent = cs.accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
             return (
               <motion.div
                 key={cs.org}

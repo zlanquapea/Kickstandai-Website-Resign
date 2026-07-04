@@ -53,7 +53,7 @@ function CTASection() {
         className="font-display text-[clamp(40px,5vw,72px)] leading-[1.05] tracking-[-2px] text-text-primary mb-5 max-w-[680px]"
       >
         Your workflow is a{' '}
-        <em style={{ color: '#A7F3D0' }}>solvable problem.</em>
+        <em style={{ color: '#A7F3F0' }}>solvable problem.</em>
       </motion.h2>
 
       <motion.p

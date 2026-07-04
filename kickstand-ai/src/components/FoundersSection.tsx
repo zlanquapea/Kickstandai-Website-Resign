@@ -85,7 +85,7 @@ function FoundersSection() {
             className="font-display text-[clamp(26px,2.8vw,40px)] leading-[1.2] tracking-[-0.8px] text-text-primary mb-8"
           >
             "Most AI tools promise efficiency. We promise that the{' '}
-            <em style={{ color: '#A7F3D0' }}>right things</em> get the time
+            <em style={{ color: '#A7F3F0' }}>right things</em> get the time
             back."
           </motion.blockquote>
 

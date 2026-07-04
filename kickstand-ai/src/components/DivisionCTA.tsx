@@ -29,7 +29,7 @@ function DivisionCTA({
 }: DivisionCTAProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const accent = accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+  const accent = accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
 
   const variants: Variants = {
     hidden: { opacity: 0, y: 24 },

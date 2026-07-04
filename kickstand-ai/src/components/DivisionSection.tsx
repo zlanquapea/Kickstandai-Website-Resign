@@ -24,7 +24,7 @@ function DivisionSection({
 }: DivisionSectionProps) {
   const ref = useRef<HTMLElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const accent = accentColor === 'mint' ? '#A7F3D0' : '#E9D5FF'
+  const accent = accentColor === 'mint' ? '#A7F3F0' : '#EBD5FF'
   const accentFaint =
     accentColor === 'mint' ? 'rgba(167,243,208,0.12)' : 'rgba(233,213,255,0.12)'
 
