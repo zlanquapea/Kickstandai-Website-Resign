@@ -6,7 +6,9 @@ function Layout() {
   return (
     <div className="bg-bg-primary min-h-screen text-text-primary font-sans">
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   )
