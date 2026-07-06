@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView, Variants } from 'framer-motion'
 import PageHeader from '../components/PageHeader'
 import DivisionCTA from '../components/DivisionCTA'
+import PodcastSection from '../components/PodcastSection'
 import usePageTitle from '../hooks/usePageTitle'
 
 const easing = [0.22, 1, 0.36, 1] as const
@@ -129,6 +130,8 @@ function AboutPage() {
           ))}
         </div>
       </section>
+
+      <PodcastSection />
 
       <DivisionCTA
         eyebrow="Join the work"
